@@ -1,0 +1,76 @@
+selenium webdriver
+webdrivermanager
+testing
+extent report
+build plugin, to fix java version issue
+2.1 Enable auto import
+.
+
+3/
+Create configuration.properties file
+configuration.properties
+
+web application utl
+credentials
+browser name
+explicit wait time
+4/
+Create .gitignore file and add there:
+.idea
+*.iml
+target
+test-output
+5/
+Create packages:
+
+pages
+tests
+utilities
+6/
+Add utilities:
+Driver class
+BrowserUtilities
+DataTimeUtilities
+7/
+    7.1
+        Add before method
+        @BeforeMethod
+        public void setup(){
+        open browser
+        maximize window
+        }
+    7.2
+        Add after method
+        @AfterMethod
+        public void teardown(){
+        close browser
+        }
+    7.3
+        setup extent report
+        @BeforeTest
+        public void beforeTest(){
+        setup report
+        }
+    7.4
+        Generate report
+        @AfterTest
+        public void afterTest(){
+        flush report
+        }
+ 8/
+        Create AbstractBasePage class under pages:
+        8.1  Initialize page factory
+        8.2 Put some common method/webelements/locators here.
+            Let other page classes extend it.
+ 9/  Create git repository:
+    9.1
+        git init
+        git add .
+        git commit -m "first commit"
+    9.2
+        Go to github, create repostitory with same name
+    9.3
+        Execute steps for exiting repository. There are 2 streps:
+ 10 Create suite runners
+  new file-->testing.xml    \
+  add
